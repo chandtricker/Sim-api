@@ -6,6 +6,5 @@
     "start": "node index.js"
   },
   "dependencies": {
-    // your dependencies here
   }
 }
