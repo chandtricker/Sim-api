@@ -1,0 +1,893 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAND TRICKER VIP - Premium Web Collection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, rgba(255, 107, 53, 0.05) 0%, transparent 50%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        /* Header Section */
+        .header-section {
+            padding: 60px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .vip-crown {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: #ffd700;
+            animation: crown-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes crown-glow {
+            from { text-shadow: 0 0 5px #ffd700; }
+            to { text-shadow: 0 0 15px #ffd700, 0 0 25px #ffd700; }
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .logo-glow {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(45deg, #ffd700, #ff6b35);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.4);
+            position: relative;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .logo-glow::before {
+            content: '';
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50%;
+            top: -10px;
+            left: -10px;
+            animation: rotate 10s linear infinite;
+        }
+
+        .logo-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffd700, #ff6b35, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+
+        .main-title::after {
+            content: '✨ VIP EXCLUSIVE ✨';
+            display: block;
+            font-size: 1rem;
+            color: #ffd700;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            color: #4ecdc4;
+        }
+
+        /* Navigation Bar */
+        .nav-section {
+            padding: 30px 0;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            margin: 0 20px;
+            border-radius: 20px;
+            margin-bottom: 60px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            background: linear-gradient(45deg, #ffd700, #ff6b35);
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+        }
+
+        /* VIP Web Collection */
+        .web-collection {
+            padding: 60px 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .collection-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            background: linear-gradient(45deg, #ffd700, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .collection-title::before {
+            content: '👑';
+            position: absolute;
+            left: -50px;
+            top: 0;
+            font-size: 3rem;
+            animation: bounce 2s infinite;
+        }
+
+        .collection-title::after {
+            content: '👑';
+            position: absolute;
+            right: -50px;
+            top: 0;
+            font-size: 3rem;
+            animation: bounce 2s infinite reverse;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .web-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .web-card {
+            background: linear-gradient(145deg, rgba(255,215,0,0.1), rgba(255,107,53,0.1));
+            border: 2px solid rgba(255,215,0,0.3);
+            border-radius: 25px;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .web-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .web-card:hover::before {
+            opacity: 1;
+            animation: shine 0.6s ease;
+        }
+
+        .web-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+            border-color: rgba(255, 215, 0, 0.6);
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        .vip-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            color: #000;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .web-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #4ecdc4, #45b7aa);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+
+        .web-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .web-description {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .web-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .feature-tag {
+            background: rgba(78, 205, 196, 0.2);
+            border: 1px solid rgba(78, 205, 196, 0.4);
+            color: #4ecdc4;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .web-btn {
+            background: linear-gradient(45deg, #4ecdc4, #45b7aa);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 5px;
+        }
+
+        .web-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+        }
+
+        .web-btn.preview {
+            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            color: #000;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            margin: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 30px 20px;
+            background: linear-gradient(145deg, rgba(255,215,0,0.1), rgba(78,205,196,0.1));
+            border-radius: 20px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer-section {
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.8));
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-btn.youtube {
+            background: linear-gradient(45deg, #ff0000, #cc0000);
+            color: white;
+        }
+
+        .social-btn.whatsapp {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+        }
+
+        .social-btn.facebook {
+            background: linear-gradient(45deg, #1877f2, #0d47a1);
+            color: white;
+        }
+
+        .social-btn.telegram {
+            background: linear-gradient(45deg, #0088cc, #005f8b);
+            color: white;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .subtitle { font-size: 1.2rem; }
+            .collection-title { font-size: 2rem; }
+            .collection-title::before,
+            .collection-title::after { display: none; }
+            .web-grid { grid-template-columns: 1fr; }
+            .nav-buttons { flex-direction: column; align-items: center; }
+            .logo-glow { width: 120px; height: 120px; }
+            .logo-image { width: 80px; height: 80px; }
+            .vip-crown { top: 10px; right: 10px; font-size: 1.5rem; }
+        }
+
+        @media (max-width: 480px) {
+            .main-title { font-size: 2rem; }
+            .web-card { padding: 20px; margin: 0 10px; }
+            .stats-grid { grid-template-columns: 1fr; }
+            .social-links { gap: 15px; }
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #ffd700;
+        }
+
+        .loading i {
+            font-size: 2rem;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation"></div>
+    
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="vip-crown">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="logo-container">
+            <div class="logo-glow">
+                <img src="https://i.ibb.co/xKFdQMVh/icon.png" alt="Chand Tricker VIP Logo" class="logo-image">
+            </div>
+        </div>
+        <h1 class="main-title">CHAND TRICKER VIP</h1>
+        <p class="subtitle">Premium Web Collection & Tools Hub</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <section class="nav-section">
+        <div class="nav-buttons">
+            <a href="/visit.html" class="nav-btn">
+                <i class="fas fa-eye"></i> Visitor Portal
+            </a>
+            <a href="/chat.html" class="nav-btn">
+                <i class="fas fa-robot"></i> AI Assistant
+            </a>
+            <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="nav-btn">
+                <i class="fab fa-youtube"></i> YouTube
+            </a>
+            <a href="#collection" class="nav-btn">
+                <i class="fas fa-globe"></i> My Websites
+            </a>
+        </div>
+    </section>
+
+    <!-- Web Collection Section -->
+    <section id="collection" class="web-collection">
+        <h2 class="collection-title">VIP WEB COLLECTION</h2>
+        <div class="web-grid">
+            <!-- Visitor Portal -->
+            <div class="web-card">
+                <div class="vip-badge">VIP PREMIUM</div>
+                <div class="web-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="web-title">Visitor Analytics Portal</h3>
+                <p class="web-description">Advanced visitor tracking system with real-time analytics, social media integration, and beautiful UI design.</p>
+                <div class="web-features">
+                    <span class="feature-tag">Live Counter</span>
+                    <span class="feature-tag">Social Links</span>
+                    <span class="feature-tag">Responsive</span>
+                    <span class="feature-tag">Real-time</span>
+                </div>
+                <div>
+                    <a href="/visit.html" class="web-btn preview">
+                        <i class="fas fa-eye"></i> Live Preview
+                    </a>
+                    <a href="/visit.html" class="web-btn">
+                        <i class="fas fa-external-link-alt"></i> Visit Site
+                    </a>
+                </div>
+            </div>
+
+            <!-- AI Chat System -->
+            <div class="web-card">
+                <div class="vip-badge">AI POWERED</div>
+                <div class="web-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3 class="web-title">Smart AI Chat System</h3>
+                <p class="web-description">Interactive AI assistant with learning capabilities. Ask questions or teach new responses with beautiful UI.</p>
+                <div class="web-features">
+                    <span class="feature-tag">AI Learning</span>
+                    <span class="feature-tag">Interactive</span>
+                    <span class="feature-tag">Smart UI</span>
+                    <span class="feature-tag">Custom</span>
+                </div>
+                <div>
+                    <a href="/chat.html" class="web-btn preview">
+                        <i class="fas fa-comments"></i> Try Chat
+                    </a>
+                    <a href="/chat.html" class="web-btn">
+                        <i class="fas fa-brain"></i> Start Learning
+                    </a>
+                </div>
+            </div>
+
+            <!-- YouTube Channel -->
+            <div class="web-card">
+                <div class="vip-badge">CONTENT HUB</div>
+                <div class="web-icon">
+                    <i class="fab fa-youtube"></i>
+                </div>
+                <h3 class="web-title">YouTube Channel</h3>
+                <p class="web-description">Premium tutorial content, app reviews, tricks, and exclusive VIP content for subscribers.</p>
+                <div class="web-features">
+                    <span class="feature-tag">Tutorials</span>
+                    <span class="feature-tag">Reviews</span>
+                    <span class="feature-tag">VIP Content</span>
+                    <span class="feature-tag">2K+ Subs</span>
+                </div>
+                <div>
+                    <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="web-btn preview">
+                        <i class="fas fa-play"></i> Watch Now
+                    </a>
+                    <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="web-btn">
+                        <i class="fas fa-bell"></i> Subscribe
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tools & APKs -->
+            <div class="web-card">
+                <div class="vip-badge">TOOLS HUB</div>
+                <div class="web-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="web-title">Free Tools & APKs</h3>
+                <p class="web-description">Collection of premium tools, modified APKs, and utility applications. All tested and virus-free.</p>
+                <div class="web-features">
+                    <span class="feature-tag">Free Tools</span>
+                    <span class="feature-tag">Safe APKs</span>
+                    <span class="feature-tag">Tested</span>
+                    <span class="feature-tag">Premium</span>
+                </div>
+                <div>
+                    <a href="#" class="web-btn preview" onclick="showComingSoon()">
+                        <i class="fas fa-download"></i> Browse Tools
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029VaZrEGYIN9ih4PxcFQ33" target="_blank" class="web-btn">
+                        <i class="fab fa-whatsapp"></i> Get Updates
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media Hub -->
+            <div class="web-card">
+                <div class="vip-badge">SOCIAL HUB</div>
+                <div class="web-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3 class="web-title">Social Media Hub</h3>
+                <p class="web-description">Centralized access to all CHAND TRICKER social media platforms and communities.</p>
+                <div class="web-features">
+                    <span class="feature-tag">All Platforms</span>
+                    <span class="feature-tag">Updates</span>
+                    <span class="feature-tag">Community</span>
+                    <span class="feature-tag">Support</span>
+                </div>
+                <div>
+                    <a href="/visit.html#social" class="web-btn preview">
+                        <i class="fas fa-users"></i> Join Community
+                    </a>
+                    <a href="https://t.me/CHANDTRICKER" target="_blank" class="web-btn">
+                        <i class="fab fa-telegram"></i> VIP Group
+                    </a>
+                </div>
+            </div>
+
+            <!-- Coming Soon -->
+            <div class="web-card">
+                <div class="vip-badge">COMING SOON</div>
+                <div class="web-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="web-title">More VIP Projects</h3>
+                <p class="web-description">Exciting new projects in development. Gaming tools, educational content, and more premium features.</p>
+                <div class="web-features">
+                    <span class="feature-tag">Gaming</span>
+                    <span class="feature-tag">Education</span>
+                    <span class="feature-tag">Premium</span>
+                    <span class="feature-tag">Soon</span>
+                </div>
+                <div>
+                    <a href="#" class="web-btn preview" onclick="showComingSoon()">
+                        <i class="fas fa-clock"></i> Coming Soon
+                    </a>
+                    <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="web-btn">
+                        <i class="fas fa-bell"></i> Get Notified
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <h2 class="collection-title" style="margin-bottom: 40px;">VIP STATISTICS</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number" id="totalProjects">6+</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="totalVisitors">Loading...</div>
+                <div class="stat-label">Total Visitors</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="socialFollowers">5K+</div>
+                <div class="stat-label">Social Followers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" id="satisfaction">100%</div>
+                <div class="stat-label">VIP Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <h3 class="footer-title">CHAND TRICKER VIP</h3>
+            <p class="footer-text">Premium web development, exclusive tools, and VIP community access. Join the elite circle of CHAND TRICKER.</p>
+            <div class="social-links">
+                <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="social-btn youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://whatsapp.com/channel/0029VaZrEGYIN9ih4PxcFQ33" target="_blank" class="social-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" onclick="copyToClipboard('https://www.facebook.com/CH4ND.TRICKER')" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" onclick="copyToClipboard('https://t.me/CHANDTRICKER')" class="social-btn telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
+            <p style="margin-top: 30px; opacity: 0.6; font-size: 0.9rem;">
+                © 2024 CHAND TRICKER VIP. All rights reserved. | ONE MAN ARMY ❤️
+            </p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading" id="loadingOverlay">
+        <i class="fas fa-spinner"></i>
+        <p style="margin-top: 10px;">Loading VIP Content...</p>
+    </div>
+
+    <script>
+        // Load visitor stats
+        async function loadStats() {
+            try {
+                const response = await fetch('/visitor-stats');
+                const data = await response.json();
+                document.getElementById('totalVisitors').textContent = data.total.toLocaleString();
+            } catch (error) {
+                document.getElementById('totalVisitors').textContent = '5K+';
+            }
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showNotification('Link copied to clipboard!', 'success');
+                }).catch(() => {
+                    fallbackCopyText(text);
+                });
+            } else {
+                fallbackCopyText(text);
+            }
+        }
+
+        function fallbackCopyText(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showNotification('Link copied to clipboard!', 'success');
+            } catch (err) {
+                showNotification('Copy failed. Please copy manually.', 'error');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+
+        // Show coming soon notification
+        function showComingSoon() {
+            showNotification('🚀 Exciting features coming soon! Stay tuned to our YouTube channel for updates.', 'info');
+        }
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 15px 25px;
+                border-radius: 10px;
+                color: white;
+                font-weight: bold;
+                z-index: 10000;
+                max-width: 300px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                animation: slideIn 0.3s ease-out;
+            `;
+
+            switch(type) {
+                case 'success':
+                    notification.style.background = 'linear-gradient(45deg, #4ecdc4, #45b7aa)';
+                    break;
+                case 'error':
+                    notification.style.background = 'linear-gradient(45deg, #ff6b6b, #ee5a5a)';
+                    break;
+                default:
+                    notification.style.background = 'linear-gradient(45deg, #ffd700, #ff6b35)';
+                    notification.style.color = '#000';
+            }
+
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.animation = 'slideOut 0.3s ease-in forwards';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        document.body.removeChild(notification);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Add slide animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
+            }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStats();
+            
+            // Add entrance animations
+            const cards = document.querySelectorAll('.web-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+
+            // Welcome message
+            setTimeout(() => {
+                showNotification('🎉 Welcome to CHAND TRICKER VIP! Explore our premium web collection.', 'success');
+            }, 1000);
+        });
+
+        // Performance optimization
+        window.addEventListener('beforeunload', function() {
+            document.querySelectorAll('[style*="will-change"]').forEach(el => {
+                el.style.willChange = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

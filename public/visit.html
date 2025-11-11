@@ -1,0 +1,942 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Chand Tricker APK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+        color: #ffffff;
+        overflow-x: hidden;
+        line-height: 1.6;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Optimized background - static gradient only */
+    .hero-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        background: radial-gradient(circle at center, rgba(255,215,0,0.08), transparent);
+    }
+
+    .welcome-container {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    }
+
+    .test-line {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .test-text {
+        display: inline-block;
+        background: linear-gradient(45deg, #00ff00, #32cd32);
+        color: #000;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
+        border: 2px solid rgba(0, 255, 0, 0.3);
+    }
+
+    .logo-glow {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(45deg, #ffd700, #ff6b35);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .logo-glow:hover {
+        transform: scale(1.05);
+    }
+
+    .logo-image {
+        width: 80px;
+        height: 80px;
+        border-radius: 15px;
+        object-fit: cover;
+    }
+
+    .welcome-title {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .gradient-text {
+        background: linear-gradient(45deg, #ffd700, #ff6b35, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.5rem;
+        opacity: 0.9;
+        margin-bottom: 20px;
+        color: #ffd700;
+    }
+
+    .welcome-description {
+        font-size: 1.1rem;
+        opacity: 0.8;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Optimized stats section */
+    .stats-section {
+        padding: 60px 0;
+        position: relative;
+    }
+
+    .visitor-card {
+        background: linear-gradient(145deg, rgba(255,215,0,0.1), rgba(255,107,53,0.1));
+        border: 2px solid rgba(255,215,0,0.3);
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        max-width: 450px;
+        margin: 0 auto;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    }
+
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .card-header i {
+        font-size: 2rem;
+        color: #ffd700;
+    }
+
+    .card-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .visitor-count {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: #ffd700;
+        text-shadow: 0 0 15px rgba(255,215,0,0.4);
+        margin-bottom: 15px;
+    }
+
+    .visitor-text {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+
+    .visitor-stats {
+        display: flex;
+        justify-content: space-around;
+        gap: 15px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+        opacity: 0.8;
+    }
+
+    .stat-item i {
+        color: #4ecdc4;
+    }
+
+    /* Social section with staggered animation */
+    .social-section {
+        padding: 60px 0;
+        position: relative;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        background: linear-gradient(45deg, #ffd700, #4ecdc4, #ff6b35);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    }
+
+    .vip-badge {
+        display: inline-block;
+        background: linear-gradient(45deg, #ffd700, #ff6b35);
+        color: #000;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.7rem;
+        font-weight: bold;
+        margin-left: 10px;
+        box-shadow: 0 3px 10px rgba(255,215,0,0.3);
+    }
+
+    .social-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .social-card {
+        background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        position: relative;
+        backdrop-filter: blur(5px);
+        border: 2px solid rgba(255,215,0,0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        opacity: 0;
+        transform: translateY(30px);
+        will-change: transform;
+    }
+
+    .social-card:nth-child(1) { animation: fadeInUp 0.6s ease-out 0.8s forwards; }
+    .social-card:nth-child(2) { animation: fadeInUp 0.6s ease-out 1.0s forwards; }
+    .social-card:nth-child(3) { animation: fadeInUp 0.6s ease-out 1.2s forwards; }
+    .social-card:nth-child(4) { animation: fadeInUp 0.6s ease-out 1.4s forwards; }
+
+    .social-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+        border-color: rgba(255,215,0,0.4);
+    }
+
+    .social-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 2.5rem;
+        position: relative;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.1);
+    }
+
+    .youtube-card .social-icon {
+        background: linear-gradient(45deg, #ff0000, #cc0000);
+    }
+
+    .whatsapp-card .social-icon {
+        background: linear-gradient(45deg, #25d366, #128c7e);
+    }
+
+    .facebook-card .social-icon {
+        background: linear-gradient(45deg, #1877f2, #0d47a1);
+    }
+
+    .telegram-card .social-icon {
+        background: linear-gradient(45deg, #0088cc, #005f8b);
+    }
+
+    .social-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+        background: linear-gradient(45deg, #ffd700, #ffffff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: bold;
+    }
+
+    .social-card p {
+        opacity: 0.9;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        will-change: transform;
+        border: none;
+        cursor: pointer;
+    }
+
+    .youtube-btn { 
+        background: linear-gradient(45deg, #ff0000, #cc0000);
+    }
+    .whatsapp-btn { 
+        background: linear-gradient(45deg, #25d366, #128c7e);
+    }
+    .facebook-btn { 
+        background: linear-gradient(45deg, #1877f2, #0d47a1);
+    }
+    .telegram-btn { 
+        background: linear-gradient(45deg, #0088cc, #005f8b);
+    }
+
+    .social-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        filter: brightness(1.1);
+    }
+
+    .social-btn:active {
+        transform: translateY(0);
+    }
+
+    /* Optimized popup */
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        backdrop-filter: blur(3px);
+    }
+
+    .popup-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .popup-content {
+        background: linear-gradient(145deg, #1a1a2e, #16213e);
+        border-radius: 15px;
+        padding: 0;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        border: 2px solid rgba(255, 215, 0, 0.3);
+        transform: scale(0.9) translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    .popup-overlay.show .popup-content {
+        transform: scale(1) translateY(0);
+    }
+
+    .popup-header {
+        background: linear-gradient(45deg, #ff0000, #cc0000);
+        padding: 20px;
+        border-radius: 13px 13px 0 0;
+        text-align: center;
+        position: relative;
+    }
+
+    .youtube-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .popup-header h2 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .close-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.1);
+    }
+
+    .popup-body {
+        padding: 20px;
+    }
+
+    .channel-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .channel-logo {
+        width: 60px;
+        height: 60px;
+        border-radius: 12px;
+        object-fit: cover;
+    }
+
+    .channel-details h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+        color: #ffd700;
+    }
+
+    .channel-details p {
+        opacity: 0.8;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+    }
+
+    .subscriber-count {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #4ecdc4;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .popup-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .subscribe-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 20px;
+        background: linear-gradient(45deg, #ff0000, #cc0000);
+        color: white;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+
+    .subscribe-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(255, 0, 0, 0.3);
+    }
+
+    .later-btn {
+        padding: 12px 20px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 25px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 0.9rem;
+    }
+
+    .later-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
+
+    /* Optimized animations - shorter duration, simpler effects */
+    @keyframes fadeInUp {
+        from { 
+            opacity: 0; 
+            transform: translateY(20px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    /* Mobile optimizations - reduced effects for better performance */
+    @media (max-width: 768px) {
+        .welcome-title { font-size: 2.2rem; }
+        .welcome-subtitle { font-size: 1.2rem; }
+        .section-title { font-size: 2rem; }
+        .visitor-count { font-size: 2.8rem; }
+        
+        .social-grid { 
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .social-card { 
+            padding: 25px 20px; 
+            margin: 0 10px;
+        }
+        
+        .social-icon {
+            width: 70px;
+            height: 70px;
+            font-size: 2rem;
+        }
+        
+        .visitor-stats { 
+            flex-direction: column; 
+            gap: 10px; 
+            text-align: center;
+        }
+        
+        .channel-info { 
+            flex-direction: column; 
+            text-align: center; 
+        }
+        
+        .popup-buttons { 
+            flex-direction: column; 
+            gap: 8px; 
+        }
+        
+        .visitor-card {
+            padding: 30px 20px;
+        }
+
+        /* Disable hover effects on mobile */
+        .social-card:hover {
+            transform: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .social-btn:hover {
+            transform: none;
+            filter: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .welcome-title { font-size: 1.8rem; }
+        .visitor-card { padding: 25px 15px; }
+        .social-card { 
+            padding: 20px 15px; 
+            margin: 0 5px;
+        }
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 1.8rem;
+        }
+        .social-btn {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+        .popup-content { width: 95%; }
+        .popup-body { padding: 15px; }
+        .section-title { font-size: 1.6rem; }
+        .logo-glow {
+            width: 100px;
+            height: 100px;
+        }
+        .logo-image {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    /* Optimize for older devices and reduce motion preference */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+        
+        .social-card {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .welcome-container {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .visitor-card {
+            opacity: 1;
+            transform: none;
+        }
+        
+        .section-title {
+            opacity: 1;
+            transform: none;
+        }
+    }
+
+    /* Optimize for low-end devices */
+    @media (max-width: 480px) and (max-height: 800px) {
+        .hero-section {
+            background: #1a1a2e; /* Solid color instead of gradient */
+        }
+        
+        .visitor-card {
+            backdrop-filter: none;
+            background: rgba(255,215,0,0.15);
+        }
+        
+        .social-card {
+            backdrop-filter: none;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        .popup-overlay {
+            backdrop-filter: none;
+        }
+    }
+
+</style>
+<body>
+    <!-- Welcome Section -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="welcome-container">
+                <div class="test-line">
+                    <span class="test-text">CHAND - Free Tools APK (ATF)</span>
+                </div>
+                <div class="logo-glow">
+                    <img src="https://i.ibb.co/xKFdQMVh/icon.png" alt="Chand Tricker APK Logo" class="logo-image">
+                </div>
+                <h1 class="welcome-title">
+                    <span class="gradient-text">Welcome to CHAND TRICKER APK</span>
+                </h1>
+                <p class="welcome-subtitle">Your can use free Tools by CHAND TRICKER.</p>
+                <div class="welcome-description">
+                    <p>ONE MAN ARMY OWNER CHAND ❤️</p>
+                    <div style="margin-top: 30px;">
+                        <a href="/chat.html" style="display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; background: linear-gradient(45deg, #4ecdc4, #45b7aa); color: white; text-decoration: none; border-radius: 25px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3); transition: all 0.3s ease;">
+                            <i class="fas fa-robot"></i> AI Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Visitor Counter Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="visitor-card">
+                <div class="card-header">
+                    <i class="fas fa-users"></i>
+                    <h3>Total Visitors</h3>
+                </div>
+                <div class="visitor-count" id="visitorCount">Loading...</div>
+                <div class="visitor-text">Amazing Users Joined Our Community</div>
+                <div class="visitor-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Today: <span id="todayVisitors">0</span></span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>This Month: <span id="monthVisitors">0</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-section">
+        <div class="container">
+            <h2 class="section-title">
+                Connect With Us
+                <span class="vip-badge">VIP EXCLUSIVE</span>
+            </h2>
+            <div class="social-grid">
+                <!-- YouTube Card -->
+                <div class="social-card youtube-card">
+                    <div class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3>YouTube Channel</h3>
+                    <p>Latest tutorials & gameplay videos</p>
+                    <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="social-btn youtube-btn">
+                        <i class="fas fa-play"></i> Visit Channel
+                    </a>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="social-card whatsapp-card">
+                    <div class="social-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp Channel</h3>
+                    <p>Get instant updates & support</p>
+                    <a href="https://whatsapp.com/channel/0029VaZrEGYIN9ih4PxcFQ33" target="_blank" class="social-btn whatsapp-btn">
+                        <i class="fas fa-message"></i> Join Channel
+                    </a>
+                </div>
+
+                <!-- Facebook Card -->
+                <div class="social-card facebook-card">
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h3>Facebook</h3>
+                    <p>Community discussions & updates</p>
+                    <button onclick="copyToClipboard('https://www.facebook.com/CH4ND.TRICKER', this)" class="social-btn facebook-btn">
+                        <i class="fas fa-thumbs-up"></i> FOLLOW
+                    </button>
+                </div>
+
+                <!-- Telegram Card -->
+                <div class="social-card telegram-card">
+                    <div class="social-icon">
+                        <i class="fab fa-telegram-plane"></i>
+                    </div>
+                    <h3>Telegram VIP</h3>
+                    <p>Exclusive VIP content & mods</p>
+                    <button onclick="copyToClipboard('https://t.me/CHANDTRICKER', this)" class="social-btn telegram-btn">
+                        <i class="fas fa-paper-plane"></i> Join VIP
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Popup Modal -->
+    <div id="youtubePopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <i class="fab fa-youtube youtube-icon"></i>
+                <h2>Subscribe to Our YouTube Channel!</h2>
+                <button class="close-btn" id="closePopup">&times;</button>
+            </div>
+            <div class="popup-body">
+                <div class="channel-info">
+                    <img src="https://i.ibb.co/xKFdQMVh/icon.png" alt="Channel Logo" class="channel-logo">
+                    <div class="channel-details">
+                        <h3>CHAND TRICKER</h3>
+                        <p>Get the latest tools tutorials, free tricks, and knowledge content!</p>
+                        <div class="subscriber-count">
+                            <i class="fas fa-users"></i>
+                            <span>Join 2K+ Subscribers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-buttons">
+                    <a href="https://youtube.com/@chandtricker?si=7kEQKk5yiXkT6Y1o" target="_blank" class="subscribe-btn">
+                        <i class="fab fa-youtube"></i>
+                        Subscribe Now
+                    </a>
+                    <button class="later-btn" id="laterBtn">Maybe Later</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load and display real visitor data from server
+        async function loadVisitorData() {
+            try {
+                // Track this visit first
+                await fetch('/track-visitor', { method: 'POST' });
+                
+                // Get updated stats
+                const response = await fetch('/visitor-stats');
+                const data = await response.json();
+                
+                // Update display with real data
+                document.getElementById('visitorCount').textContent = data.total.toLocaleString();
+                document.getElementById('todayVisitors').textContent = data.today.toLocaleString();
+                document.getElementById('monthVisitors').textContent = data.monthly.toLocaleString();
+                
+                console.log('Visitor stats loaded:', data);
+            } catch (error) {
+                console.error('Error loading visitor data:', error);
+                // Fallback to local storage if server fails
+                initFallbackCounter();
+            }
+        }
+
+        // Fallback counter for offline mode
+        function initFallbackCounter() {
+            let visitorData = JSON.parse(localStorage.getItem('chandTrickerVisitors')) || {
+                total: 1234,
+                today: 12,
+                month: 156,
+                lastVisit: new Date().toDateString()
+            };
+
+            const today = new Date().toDateString();
+            if (visitorData.lastVisit !== today) {
+                visitorData.today = Math.floor(Math.random() * 20) + 5;
+                visitorData.lastVisit = today;
+            } else {
+                visitorData.today += 1;
+            }
+
+            visitorData.total += 1;
+            visitorData.month += 1;
+
+            localStorage.setItem('chandTrickerVisitors', JSON.stringify(visitorData));
+
+            document.getElementById('visitorCount').textContent = visitorData.total.toLocaleString();
+            document.getElementById('todayVisitors').textContent = visitorData.today.toLocaleString();
+            document.getElementById('monthVisitors').textContent = visitorData.month.toLocaleString();
+        }
+
+        // YouTube popup functionality
+        function initYouTubePopup() {
+            const popup = document.getElementById('youtubePopup');
+            const closeBtn = document.getElementById('closePopup');
+            const laterBtn = document.getElementById('laterBtn');
+
+            const today = new Date().toDateString();
+            const lastPopupShown = localStorage.getItem('chandTrickerPopupShown');
+            
+            if (lastPopupShown === today) {
+                return;
+            }
+
+            setTimeout(() => {
+                popup.classList.add('show');
+                localStorage.setItem('chandTrickerPopupShown', today);
+            }, 5000);
+
+            function closePopup() {
+                popup.classList.remove('show');
+            }
+
+            closeBtn.addEventListener('click', closePopup, { passive: true });
+            laterBtn.addEventListener('click', closePopup, { passive: true });
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) closePopup();
+            }, { passive: true });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && popup.classList.contains('show')) {
+                    closePopup();
+                }
+            }, { passive: true });
+        }
+
+        // Clipboard copy function
+        function copyToClipboard(text, button) {
+            const originalText = button.innerHTML;
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text).then(() => {
+                    button.innerHTML = '<i class="fas fa-check"></i> Link Copied!';
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                    }, 2000);
+                }).catch(() => {
+                    fallbackCopyText(text, button, originalText);
+                });
+            } else {
+                fallbackCopyText(text, button, originalText);
+            }
+        }
+
+        function fallbackCopyText(text, button, originalText) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                button.innerHTML = '<i class="fas fa-check"></i> Link Copied!';
+            } catch (err) {
+                button.innerHTML = '<i class="fas fa-times"></i> Copy Failed';
+            }
+            
+            document.body.removeChild(textArea);
+            setTimeout(() => {
+                button.innerHTML = originalText;
+            }, 2000);
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            loadVisitorData();
+            
+            setTimeout(() => {
+                initYouTubePopup();
+            }, 1000);
+        });
+
+        // Performance optimization
+        window.addEventListener('beforeunload', function() {
+            document.querySelectorAll('[style*="will-change"]').forEach(el => {
+                el.style.willChange = 'auto';
+            });
+        }, { passive: true });
+    </script>
+</body>
+</html>
