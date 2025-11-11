@@ -1,13 +1,11 @@
 {
+  "name": "sim-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
-    "@atf-team/ytdl-core2": "^4.15.1",
-    "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "http-proxy-middleware": "^3.0.5",
-    "i": "^0.3.7",
-    "npm": "^10.9.0",
-    "youtube-search-api": "^1.2.1",
-    "ytdl": "^1.4.1",
-    "ytdl-core": "^4.11.5"
+    // your dependencies here
   }
 }
